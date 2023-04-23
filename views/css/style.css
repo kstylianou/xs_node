@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+}
+
+.distance-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.distance-container > * {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+span.mapboxgl-ctrl-icon {
+    height: 100px;
+    width: 100px;
+}
+
+.mapboxgl-ctrl-top-right {
+    bottom: 10px !important;
+}
+
+.mapboxgl-ctrl-top-left {
+    bottom: 0;
+}
