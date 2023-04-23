@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'views')));
 
 /** Set up variables for libraries **/
-const port = 3000;
+const port = 80;
 
 /** method post will only accept json format data **/
 app.use(bodyParser.json());
