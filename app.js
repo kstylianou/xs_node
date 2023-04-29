@@ -36,6 +36,11 @@ http.listen(port, () => {
 // Start socket.io connection
 io.on('connection', socket => {
     socket.on('location_update', (data) => {
+        console.log(data)
         io.emit('location', data);
-    })
+    });
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
 });
