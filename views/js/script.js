@@ -161,22 +161,22 @@ function showMap() {
         });
     });
 
-    const draw = new MapboxDraw({
-        displayControlsDefault: false,
-        // Select which mapbox-gl-draw control buttons to add to the map.
-        controls: {
-        polygon: true,
-        trash: true
-        },
-        // Set mapbox-gl-draw to draw by default.
-        // The user does not have to click the polygon control button first.
-        defaultMode: 'draw_polygon'
-        });
-        map.addControl(draw);
-         
-        map.on('draw.create', updateArea);
-        map.on('draw.delete', updateArea);
-        map.on('draw.update', updateArea);
+    // const draw = new MapboxDraw({
+    //     displayControlsDefault: false,
+    //     // Select which mapbox-gl-draw control buttons to add to the map.
+    //     controls: {
+    //         polygon: true,
+    //         trash: true,
+    //     },
+    //     // Set mapbox-gl-draw to draw by default.
+    //     // The user does not have to click the polygon control button first.
+    //     defaultMode: 'draw_polygon',
+    // });
+    // map.addControl(draw);
+
+    // map.on('draw.create', updateArea);
+    // map.on('draw.delete', updateArea);
+    // map.on('draw.update', updateArea);
 }
 
 function distance(lat1, lon1, lat2, lon2) {
@@ -253,4 +253,4 @@ function openMarkerContainer(html) {
 
 closeMarkerContainer.addEventListener('click', () => {
     markerContainer.classList.remove('active');
-})
+});
