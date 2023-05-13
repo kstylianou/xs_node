@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Turtles Bay",
+        "lat": 35.00175548509195,
+        "lng": 34.0682742706191,
+        "html": "<div class=\"img\" style=\"background-image: url('./images/turtle.jpg')\"></div><h2 class=\"title\">Turtle Bay / Underwater Statues</h2><hr /><p class=\"description\">The underwater statues in Protaras, Cyprus are a popular tourist attraction and diving spot. The statues were created in 2014 by British artist Jason deCaires Taylor, and there are a total of 27 sculptures that were placed on the seabed in the area. The sculptures depict various figures, including a man on a bicycle, a couple taking a selfie, and a mermaid. The underwater sculptures serve as an artificial reef, providing a habitat for marine life to thrive. Divers and snorkelers can explore the sculptures, which are located in depths ranging from 8 to 10 meters. The underwater statues have become a must-see attraction for visitors to Protaras and Cyprus.</p>"
+    },
+    {
+        "name": "Cyclops Cave",
+        "lng": 34.07669534577735,
+        "lat": 34.98582461583038,
+        "html": "<div class=\"img\" style=\"background-image: url('./images/kiklopas.jpg')\"></div><h2 class=\"title\">Cyclops Cave / Konnos Bay</h2><hr /><p class=\"description\">According to local legend, the Cyclops Cave in Konnos Bay, Cyprus, is named after the mythical one-eyed giant from Greek mythology. The story goes that the cave was once home to a giant Cyclops who lived there with his family. The locals would leave offerings at the entrance of the cave to appease the Cyclops and avoid his wrath. However, one day, the Greek hero Odysseus came to the island and blinded the Cyclops, causing the giant to flee and leaving the cave empty. Today, the cave is a popular tourist attraction, and visitors can explore its unique rock formations and crystal-clear waters by boat or by hiking down a steep path. While the story of the Cyclops is just a legend, the natural beauty of the cave and its surroundings make it a must-see destination for travelers visiting the area.</p>"
+    },
+    {
+        "name": "Ayioi Anargyroi Cave",
+        "lng": 34.07669534931017,
+        "lat": 34.975733912620555,
+        "html": "<div class=\"img\" style=\"background-image: url('./images/cave.jpeg')\"></div><h2 class=\"title\">Ayioi Anargyroi Sea Cave</h2><p class=\"description\">Ayioi Anargyroi sea cave is a natural cave. The cave is accessible by boat and is a popular spot for swimming, snorkeling, and cliff jumping.</p>"
+    },
+    {
+        "name": "Lovers Bridge",
+        "lng": 34.075731230629344,
+        "lat": 34.97149435040262,
+        "html": "<div class=\"img\" style=\"background-image: url('./images/loversbridge.jpg')\"></div><h2 class=\"title\">Lovers Bridge</h2><p class=\"description\">Lovers Bridge is a scenic location located in the coastal town of Protaras in Cyprus. It is a pedestrian bridge that spans a small inlet and offers stunning views of the Mediterranean Sea and the coastline. The bridge is known for its romantic ambiance and is a popular spot for couples to take photos and enjoy the sunset</p>"
+    },
+    {
+        "name": "Blue Lagoon",
+        "lng": 34.07831595662299,
+        "lat": 34.96672477667225,
+        "html": "<div class=\"img\" style=\"background-image: url('./images/lagoon.jpg')\"></div><h2 class=\"title\">Blue Lagoon</h2><p class=\"description\">Blue Lagoon is a stunning natural bay located in the Cape Greco area of Protaras, Cyprus. It is famous for its crystal-clear waters and colorful marine life, making it a popular spot for snorkeling, swimming, and diving. The name \"Blue Lagoon\" comes from the bright blue color of the water, which is caused by the sunlight reflecting off the white sand and the limestone rocks at the bottom of the bay.</p>"
+    }
+]
