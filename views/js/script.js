@@ -231,17 +231,17 @@ function updatePolygonCheck(cords, polygon) {
 
     distanceContainer.innerHTML = '';
 
-    if (checkInside(polygon, n, p)) {
-        console.log('Point is inside.');
-        const value = document.createElement('pre');
-        value.textContent = `Point is inside.`;
-        distanceContainer.appendChild(value);
-    } else {
-        console.log('Point is outside.');
-        const value = document.createElement('pre');
-        value.textContent = `Point is outside.`;
-        distanceContainer.appendChild(value);
-    }
+    // if (checkInside(polygon, n, p)) {
+    //     console.log('Point is inside.');
+    //     const value = document.createElement('pre');
+    //     value.textContent = `Point is inside.`;
+    //     distanceContainer.appendChild(value);
+    // } else {
+    //     console.log('Point is outside.');
+    //     const value = document.createElement('pre');
+    //     value.textContent = `Point is outside.`;
+    //     distanceContainer.appendChild(value);
+    // }
 }
 
 function updateDatabase(position) {

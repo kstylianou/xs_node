@@ -38,7 +38,6 @@ http.listen(port, () => {
 // Start socket.io connection
 io.on('connection', socket => {
     socket.on('location_update', (data) => {
-        console.log(socket.handshake.headers.cookie)
         //var cookies = cookie.parse(socket.handshake.headers.cookie); 
         io.emit('location', data);
     });
