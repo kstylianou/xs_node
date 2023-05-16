@@ -90,3 +90,63 @@ p.description {
     width: 100%;
     height: 100%;
 }
+
+.login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form#login {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    justify-content: center;
+}
+
+label {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+select {
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid #707070;
+    outline: none;
+}
+
+input[type="number"] {
+    padding: 5px 10px;
+    font-size: 20px;
+    border: 2px solid #707070;
+    outline: none;
+}
+
+input#submit {
+    margin-top: 20px;
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #009aff;
+    color: #fff;
+    margin-bottom: 30%;
+}
+
+.logo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 30%;
+    width: 100%;
+}

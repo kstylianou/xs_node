@@ -1,13 +1,9 @@
-let Latitude;
-let Longitude;
-let len = 0;
-
 const distanceContainer = document.getElementById('distance');
 const markerContainer = document.querySelector('.marker-container');
 const closeMarkerContainer = markerContainer.querySelector('.close');
+const form = document.getElementById('login')
 
 const cord = [];
-let id = 0;
 
 let cord_data = [];
 
@@ -15,8 +11,20 @@ fetch('./data/data.json')
     .then((response) => response.json())
     .then((data) => {
         cord_data = data;
-        showMap();
+        //showMap();
     });
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const boat_num = e.target.boat_num.value;
+
+    localStorage.setItem('boat_id', boat_num);
+
+    showMap();
+
+    form.parentNode.style.display = 'none';
+})
 
 // Create a GeoJSON source with an empty lineString.
 var geojson = {
@@ -32,16 +40,7 @@ var geojson = {
     ],
 };
 
-let urlJson = {
-    geometry: {
-        type: 'Point',
-        coordinates: [],
-    },
-    type: 'Feature',
-    properties: {
-        rotation: '',
-    },
-};
+
 
 function showMap() {
     mapboxgl.accessToken =
@@ -75,7 +74,10 @@ function showMap() {
             var lat = e.coords.latitude;
             var position = [lon, lat];
             updatePolygonCheck(position, polygon);
-            updateDatabase(position);
+            updateDatabase({
+                boat_id: localStorage.getItem('boat_id'),
+                cords: position
+            });
         });
 
         map.addSource('maine', {

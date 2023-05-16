@@ -2,9 +2,11 @@
 const express = require('express');
 const path = require("path");
 const bodyParser = require('body-parser');
+const cookie = require("cookie")
 
 const app = express();
 
+// Setup server and socket io
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -36,7 +38,8 @@ http.listen(port, () => {
 // Start socket.io connection
 io.on('connection', socket => {
     socket.on('location_update', (data) => {
-        console.log(data)
+        console.log(socket.handshake.headers.cookie)
+        //var cookies = cookie.parse(socket.handshake.headers.cookie); 
         io.emit('location', data);
     });
 
