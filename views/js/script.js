@@ -88,24 +88,22 @@ function showMap() {
             console.log(map.getBearing());
         });
 
-        const easing = t => t * (2 - t)
+        // const easing = t => t * (2 - t)
 
-        if (window.DeviceOrientationEvent) {
-          window.addEventListener('deviceorientation', event => {
-            let compassdir
-            if (event.webkitCompassHeading) {
-              // Apple works only with this, alpha doesn't work
-              compassdir = event.webkitCompassHeading
-            }
-            else {
-              compassdir = event.alpha
-            }
-            map.easeTo({
-              bearing: 360 - compassdir,
-              easing: easing
-            })
-          })
-        }
+        // if (window.DeviceOrientationEvent) {
+        //   window.addEventListener('deviceorientation', event => {
+        //     let compassdir
+        //     if (event.webkitCompassHeading) {
+        //       // Apple works only with this, alpha doesn't work
+        //       compassdir = event.webkitCompassHeading
+        //     }
+        //     else {
+        //       compassdir = event.alpha
+        //     }
+
+        //     map.setBearing(360 - compassdir)
+        //   })
+        // }
     
 
         map.addSource('maine', {
