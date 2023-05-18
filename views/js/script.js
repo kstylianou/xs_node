@@ -1,7 +1,7 @@
 const distanceContainer = document.getElementById('distance');
 const markerContainer = document.querySelector('.marker-container');
 const closeMarkerContainer = markerContainer.querySelector('.close');
-const form = document.getElementById('login')
+const form = document.getElementById('login');
 
 const cord = [];
 
@@ -14,7 +14,7 @@ fetch('./data/data.json')
         //showMap();
     });
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const boat_num = e.target.boat_num.value;
@@ -24,7 +24,7 @@ form.addEventListener('submit', e => {
     showMap();
 
     form.parentNode.style.display = 'none';
-})
+});
 
 // Create a GeoJSON source with an empty lineString.
 var geojson = {
@@ -40,45 +40,73 @@ var geojson = {
     ],
 };
 
-
-
 function showMap() {
     mapboxgl.accessToken =
         'pk.eyJ1Ijoia3N0eWxpYW5vdSIsImEiOiJja2w4OWdlY3owZHFqMndydnlqYWdwODhzIn0.5p3nIkXRh8PeBiM-caYVJQ';
-    var map = new mapboxgl.Map({
+
+    let geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true,
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true,
+    });
+
+
+
+    const map = new mapboxgl.Map({
         container: 'map',
         //style: 'mapbox://styles/mapbox/streets-v11',
-        style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+        style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [34.05496, 35.015934],
         zoom: 15,
     });
 
+
     map.on('load', function () {
-        let geolocate = new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true,
-            },
-            trackUserLocation: true,
-            showUserHeading: true,
-        });
+        // Add geolocate control to the map.
+        map.addControl(geolocate);
 
         let polygon = [];
         cord_data.forEach((item) => {
             polygon.push(new Point(item[0], item[1]));
         });
 
-        map.addControl(geolocate);
-
         geolocate.on('geolocate', function (e) {
+            console.log(e);
             var lon = e.coords.longitude;
             var lat = e.coords.latitude;
             var position = [lon, lat];
             updatePolygonCheck(position, polygon);
             updateDatabase({
                 boat_id: localStorage.getItem('boat_id'),
-                cords: position
+                cords: position,
             });
+
+            console.log(map.getBearing());
         });
+
+        const easing = t => t * (2 - t)
+
+        if (window.DeviceOrientationEvent) {
+          window.addEventListener('deviceorientation', event => {
+            let compassdir
+            if (event.webkitCompassHeading) {
+              // Apple works only with this, alpha doesn't work
+              compassdir = event.webkitCompassHeading
+            }
+            else {
+              compassdir = event.alpha
+            }
+            map.easeTo({
+              bearing: 360 - compassdir,
+              easing: easing
+            })
+          })
+        }
+    
 
         map.addSource('maine', {
             type: 'geojson',
